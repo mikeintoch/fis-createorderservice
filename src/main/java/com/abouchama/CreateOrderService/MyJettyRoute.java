@@ -37,7 +37,7 @@ public class MyJettyRoute extends RouteBuilder {
 
         from(jettyEndpoint)
         .to("log:order?showAll=true&multiline=true")
-        .setBody().simple("Hello on Fuse Integration Service - Camel route");
+        .setBody().simple("Hello on Fuse Integration Service - Camel route \n");
     }
 
 }
