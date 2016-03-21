@@ -25,10 +25,10 @@ import org.apache.camel.cdi.Uri;
 /**
  * Configures all our Camel routes, components, endpoints and beans
  */
-@ContextName("myJettyCamel")
+@ContextName("myCamelContext")
 public class MyJettyRoute extends RouteBuilder {
 
-    @Inject @Uri("jetty:http://0.0.0.0:8080/camel/hello")
+    @Inject @Uri("jetty:http://0.0.0.0:8080/CreateOrder")
     private Endpoint jettyEndpoint;
 
     @Override
@@ -36,11 +36,8 @@ public class MyJettyRoute extends RouteBuilder {
         // you can configure the route rule with Java DSL here
 
         from(jettyEndpoint)
-            .choice()
-                .when(header("name"))
-                    .transform(simple("Hello ${header.name} I am ${sysenv.HOSTNAME} how are you?"))
-                .otherwise()
-                    .transform(constant("Add a name parameter to uri, eg ?name=foo"));
+        .to("log:order?showAll=true&multiline=true")
+        .setBody().simple("Hello on Fuse Integration Service - Camel route");
     }
 
 }

@@ -1,13 +1,11 @@
-# CDI Camel Jetty QuickStart
+# FIS-CreateOrderService
 
-This example shows how to work with Camel in the Java Container using CDI to configure components,
-endpoints and beans.
+This example shows how to work with Camel in the Java Container using CDI to configure components,endpoints and beans.
 
 This quickstart is the server side which embeds a Jetty HTTP server in a Camel route that
 exposes a HTTP service.
 
-The `quickstart-cdi-camel-http` is the client to this quickstart that can be started which will call this
-Jetty HTTP server every 5 second.
+The `quickstart-cdi-camel-http` is the client to this quickstart that can be started which will call this Jetty HTTP server every 5 second.
 
 
 ### Building
@@ -93,4 +91,4 @@ Alternatively the template file can be used to create an OpenShift application t
 
 You can find more details about running this [quickstart](http://fabric8.io/guide/quickstarts/running.html) on the website. This also includes instructions how to change the Docker image user and registry.
 
-# FIS-CreateOrderService
+

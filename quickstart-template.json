@@ -8,12 +8,12 @@
       "iconClass": "icon-java"
     },
     "labels": {},
-    "name": "s2i-quickstart-cdi-camel-jetty"
+    "name": "fis-createorderservices"
   },
   "parameters": [
     {
       "name": "APP_NAME",
-      "value": "s2i-quickstart-cdi-camel-jetty",
+      "value": "fis-createorderservices",
       "description": "Application Name"
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "name": "SERVICE_NAME",
-      "value": "s2i-qs-cdi-camel-jetty",
+      "value": "fis-createorder-service",
       "description": "Exposed Service name"
     },
     {
