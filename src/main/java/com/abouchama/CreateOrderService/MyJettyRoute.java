@@ -34,10 +34,13 @@ public class MyJettyRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // you can configure the route rule with Java DSL here
-
+    	
         from(jettyEndpoint)
-        .to("log:order?showAll=true&multiline=true")
+        .to("direct:Order")
         .setBody().simple("Hello on Fuse Integration Service\n");
+        
+        from("direct:Order")
+        .to("log:order?showAll=true&multiline=true");
     }
 
 }
