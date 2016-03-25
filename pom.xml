@@ -28,13 +28,14 @@
     <docker.port.container.http>8080</docker.port.container.http>
 
     <fabric8.service.name>qs-cdi-camel-jetty</fabric8.service.name>
-    <fabric8.service.port>9102</fabric8.service.port>
+    <fabric8.service.port>8080</fabric8.service.port>
     <fabric8.service.containerPort>8080</fabric8.service.containerPort>
 
     <fabric8.label.component>${project.artifactId}</fabric8.label.component>
     <fabric8.label.container>java</fabric8.label.container>
     <fabric8.label.group>quickstarts</fabric8.label.group>
     <fabric8.iconRef>camel</fabric8.iconRef>
+    <http.port>8080</http.port>
   </properties>
 
   <dependencyManagement>
@@ -216,7 +217,11 @@
                 <env>
                   <JAVA_LIB_DIR>/deployments/lib</JAVA_LIB_DIR>
                   <JAVA_MAIN_CLASS>org.apache.camel.cdi.Main</JAVA_MAIN_CLASS>
-                </env>
+                  <HTTP_PORT>${http.port}</HTTP_PORT>
+				</env>
+					<ports>
+					  <port>${http.port}</port>
+					</ports>
               </build>
             </image>
           </images>
