@@ -40,7 +40,7 @@ public class MyJettyRoute extends RouteBuilder {
         .setBody().simple("Hello on Fuse Integration Service\n");
         
         from("direct:PutOrder")
-        .to("log:order1234?showAll=true&multiline=true");
+        .to("log:order12345?showAll=true&multiline=true");
         
     }
 
