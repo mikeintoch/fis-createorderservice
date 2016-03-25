@@ -37,14 +37,11 @@ public class MyJettyRoute extends RouteBuilder {
     	
         from(jettyEndpoint)
         .to("direct:PutOrder")
-        .to("direct:GetOrder")
         .setBody().simple("Hello on Fuse Integration Service\n");
         
         from("direct:PutOrder")
         .to("log:order?showAll=true&multiline=true");
         
-        from("direct:GetOrder")
-        .to("log:order?showAll=true&multiline=true");
     }
 
 }
