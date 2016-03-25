@@ -36,10 +36,14 @@ public class MyJettyRoute extends RouteBuilder {
         // you can configure the route rule with Java DSL here
     	
         from(jettyEndpoint)
-        .to("direct:Order")
+        .to("direct:PutOrder")
+        .to("direct:GetOrder")
         .setBody().simple("Hello on Fuse Integration Service\n");
         
-        from("direct:Order")
+        from("direct:PutOrder")
+        .to("log:order?showAll=true&multiline=true");
+        
+        from("direct:GetOrder")
         .to("log:order?showAll=true&multiline=true");
     }
 
