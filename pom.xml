@@ -20,22 +20,25 @@
     <fabric8.version>2.2.0.redhat-079</fabric8.version>
     <docker.maven.plugin.version>0.13.6</docker.maven.plugin.version>
 
+	<http.port>9191</http.port>
+	
     <!-- Docker & Fabric8 Configs -->
     <docker.from>jboss-fuse-6/fis-java-openshift:1.0</docker.from>
     <fabric8.dockerUser>fabric8/</fabric8.dockerUser>
     <docker.image>${fabric8.dockerUser}${project.artifactId}:${project.version}</docker.image>
     <docker.port.container.jolokia>8778</docker.port.container.jolokia>
-    <docker.port.container.http>8080</docker.port.container.http>
+    <fabric8.replicas>2</fabric8.replicas>
+    <!-- docker.port.container.http>8080</docker.port.container.http-->
 
     <fabric8.service.name>qs-cdi-camel-jetty</fabric8.service.name>
-    <fabric8.service.port>8080</fabric8.service.port>
-    <fabric8.service.containerPort>8080</fabric8.service.containerPort>
+    <fabric8.service.port>80</fabric8.service.port>
+    <fabric8.service.containerPort>${http.port}</fabric8.service.containerPort>
 
     <fabric8.label.component>${project.artifactId}</fabric8.label.component>
     <fabric8.label.container>java</fabric8.label.container>
     <fabric8.label.group>quickstarts</fabric8.label.group>
     <fabric8.iconRef>camel</fabric8.iconRef>
-    <http.port>8080</http.port>
+    
   </properties>
 
   <dependencyManagement>

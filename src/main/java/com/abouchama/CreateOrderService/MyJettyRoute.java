@@ -28,7 +28,7 @@ import org.apache.camel.cdi.Uri;
 @ContextName("myCamelContext")
 public class MyJettyRoute extends RouteBuilder {
 
-    @Inject @Uri("jetty:http://0.0.0.0:8080/CreateOrder")
+    @Inject @Uri("jetty:http://0.0.0.0:9191/CreateOrder")
     private Endpoint jettyEndpoint;
 
     @Override
