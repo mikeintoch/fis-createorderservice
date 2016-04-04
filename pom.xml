@@ -27,7 +27,6 @@
     <fabric8.dockerUser>fabric8/</fabric8.dockerUser>
     <docker.image>${fabric8.dockerUser}${project.artifactId}:${project.version}</docker.image>
     <docker.port.container.jolokia>8778</docker.port.container.jolokia>
-    <fabric8.replicas>2</fabric8.replicas>
     <!-- docker.port.container.http>8080</docker.port.container.http-->
 
     <fabric8.service.name>qs-cdi-camel-jetty</fabric8.service.name>
